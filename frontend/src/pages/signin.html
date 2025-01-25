@@ -10,7 +10,7 @@
           />
           <h1 class="mb-4">Login Dashboard</h1>
 
-          <form action="#">
+          <form action="./dashboard/admin/index.html" id="login">
             <div class="form-group">
               <label for="email" class="form-label">Email Adrdess</label>
               <input
@@ -29,11 +29,9 @@
                 placeholder="Your Password"
               />
             </div>
-            <a
-              href="./dashboard/admin/index.html"
-              class="btn btn-primary mt-10 block w-full"
-              >Login Dashboard</a
-            >
+            <button type="submit" class="btn btn-primary mt-10 block w-full">
+              Login Dashboard
+            </button>
             <p class="mt-6 text-center">
               Tidak bisa <span class="text-dark" href="#">log in</span>?
               <a class="text-dark" href="signup.html">Registrasi</a> untuk
@@ -45,3 +43,19 @@
     </div>
   </div>
 </section>
+
+<script>
+  document.getElementById("login").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (email === "admin@gmail.com" && password === "123") {
+      alert("Login Berhasil");
+      window.location.href = "./dashboard/admin/index.html";
+    } else {
+      alert("Email atau Password Salah!");
+    }
+  });
+</script>
