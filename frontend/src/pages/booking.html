@@ -1,0 +1,113 @@
+<!-- floating assets -->
+<img
+  class="floating-bubble-1 absolute right-0 top-0 -z-[1]"
+  src="images/floating-bubble-1.svg"
+  alt=""
+/>
+<img
+  class="floating-bubble-2 absolute left-0 top-[387px] -z-[1]"
+  src="images/floating-bubble-2.svg"
+  alt=""
+/>
+<img
+  class="floating-bubble-3 absolute right-0 top-[605px] -z-[1]"
+  src="images/floating-bubble-3.svg"
+  alt=""
+/>
+<!-- ./end floating assets -->
+
+<!-- Common hero -->
+<section class="page-hero pb-14 pt-16">
+  <div class="container">
+    <div class="text-center">
+      <ul
+        class="breadcrumb inline-flex h-8 items-center justify-center space-x-2 rounded-3xl bg-theme-light px-4 py-2"
+      >
+        <li class="leading-none text-dark">
+          <a class="inline-flex items-center text-primary" href="index.html">
+            <span class="text-sm leading-none">Home</span>
+          </a>
+        </li>
+        <li class="leading-none text-dark">
+          <span class="text-sm leading-none">/ Booking</span>
+        </li>
+      </ul>
+    </div>
+    <div class="page-hero-content mx-auto max-w-[768px] text-center">
+      <h1 class="mb-5 mt-8">Booking Service</h1>
+    </div>
+  </div>
+</section>
+<!-- end Common hero -->
+
+<section class="section pt-0">
+  <div class="container">
+    <fieldset
+      class=" rounded-lg  bg-white p-6 shadow-sm md:p-8 max-w-full mx-auto"
+    >
+    <legend class="text-primary font-bold">Booking Service</legend>
+    <form >
+        <div class="flex flex-col items-start lg:flex-row lg:items-center mb-6">
+            <label for="countries" class="w-full lg:w-[20%] block mb-2 text-sm font-medium text-gray-900">Jenis Kendaraan</label>
+            <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5  ">
+                <option selected>Pilih jenis kendaraan</option>
+                <option value="mobile-pribadi">Mobil Pribadi</option>
+                <option value="bus">Bus</option>
+                <option value="angkot">Angkot</option>
+                <option value="sport">Sport</option>
+            </select>
+        </div> 
+        <div class="flex flex-col items-start lg:flex-row lg:items-center mb-6">
+            <label for="email" class="w-full lg:w-[20%] block mb-2 text-sm font-medium text-gray-900">Nama Pemesan</label>
+            <input type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 " placeholder="Masukan Nama Pemesan" required />
+        </div> 
+        <div class="flex flex-col items-start lg:flex-row lg:items-center mb-6">
+            <label for="email" class="w-full lg:w-[20%] block mb-2 text-sm font-medium text-gray-900">Kategori Pelanggan</label>
+            <div class="w-full flex space-x-4">
+                <div class="flex items-center">
+                    <input  id="default-radio-2" type="radio" value="" name="default-radio" class="w-4 h-4 text-primary bg-gray-100 border-gray-300 focus:ring-primary">
+                    <label for="default-radio-2" class="ms-2 text-sm font-medium text-dark">Pribadi</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="default-radio-1" type="radio" value="" name="default-radio" class="w-4 h-4 text-primary bg-gray-100 border-gray-300 focus:ring-primary">
+                    <label for="default-radio-1" class="ms-2 text-sm font-medium text-dark">Perusahaan/Organisasi</label>
+                </div>
+            </div>
+        </div> 
+        <div class="flex flex-col items-start lg:flex-row lg:items-center mb-6">
+            <label for="email" class="w-full lg:w-[20%] block mb-2 text-sm font-medium text-gray-900">Deskripsi Kebutuhan</label>
+            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary focus:border-primary " placeholder="Deskripsi Kebutuhan Anda"></textarea>
+        </div> 
+        <div class="flex flex-col items-start lg:flex-row lg:items-center mb-6">
+            <label for="email" class="w-full lg:w-[20%] block mb-2 text-sm font-medium text-gray-900">Jam, Tanggal Service</label>
+            <input type="time" id="time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" min="09:00" max="18:00" value="09:00" required />
+        </div> 
+        <div class="flex flex-col items-start lg:flex-row lg:items-center mb-6">
+            <label for="email" class="w-full lg:w-[20%] block mb-2 text-sm font-medium text-gray-900">Request Montir</label>
+            <input type="text"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 " placeholder="Request montir" required />
+        </div> 
+        <div class="flex flex-col items-start lg:flex-row lg:items-center mb-6">
+            <label for="email" class="w-full lg:w-[20%] block mb-2 text-sm font-medium text-gray-900">Nomer Telepon</label>
+            <input type="number"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 " placeholder="Masukan Nomer Telepon" required />
+        </div> 
+        <div class="flex flex-col items-start lg:flex-row lg:items-center mb-6">
+            <label for="email" class="w-full lg:w-[20%] block mb-2 text-sm font-medium text-gray-900">Email</label>
+            <input type="email"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 " placeholder="Masukan Email"  required />
+        </div> 
+        <div class="w-full flex justify-end">
+            <button onclick="sweet()" type="submit" class="text-white bg-primary hover:bg-secondary focus:ring-4 focus:ring-secondary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ">Submit</button>
+        </div>
+    </form>
+  </fieldset>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function sweet (){
+    Swal.fire({
+  title: 'Berhasil Booking',
+  text: 'Terimakasih sudah booking, kami akan segera menghubungi anda',
+  icon: 'success',
+  confirmButtonText: 'Tutup'
+})
+}
+</script>
