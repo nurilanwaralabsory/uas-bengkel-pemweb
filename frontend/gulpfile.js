@@ -122,7 +122,9 @@ gulp.task("plugins", function () {
 
 // public files
 gulp.task("public", function () {
-  return gulp.src(path.src.public).pipe(gulp.dest(path.build.dir));
+  return gulp
+    .src([path.src.public, "../dashboard/**/*"], { base: "../" })
+    .pipe(gulp.dest(path.build.dir));
 });
 
 // Clean Theme Folder

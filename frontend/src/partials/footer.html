@@ -3,7 +3,7 @@
     <div class="row gx-5 pb-10 pt-[52px]">
       <div class="col-12 mt-12 md:col-6 lg:col-3">
         <a href="index.html">
-          <img src="images/logo.svg" alt="" />
+          <img src="frontend/src/public/images/logo.svg" alt="" />
         </a>
         <p class="mt-6">
           Bengkel modern dengan teknologi terkini untuk memastikan kendaraan
@@ -119,10 +119,50 @@
 </footer>
 
 <!-- jQuery -->
-<!-- <script src="plugins/jquery/jquery.min.js"></script> -->
+<!-- <script src="frontend/src/public/plugins/jquery/jquery.min.js"></script> -->
 <!-- Swiper JS -->
 <script src="plugins/swiper/swiper-bundle.js"></script>
 <script src="plugins/shufflejs/shuffle.js"></script>
 
 <!-- Main Script -->
 <script src="scripts/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector("[data-carousel='static']");
+    const items = carousel.querySelectorAll("[data-carousel-item]");
+    const indicators = carousel.querySelectorAll("[data-carousel-slide-to]");
+    const prevButton = carousel.querySelector("[data-carousel-prev]");
+    const nextButton = carousel.querySelector("[data-carousel-next]");
+
+    let currentIndex = 0;
+
+    const updateCarousel = (index) => {
+      items.forEach((item, i) => {
+        item.classList.add("hidden");
+        item.dataset.carouselItem = "";
+        indicators[i].ariaCurrent = "false";
+      });
+
+      items[index].classList.remove("hidden");
+      items[index].dataset.carouselItem = "active";
+      indicators[index].ariaCurrent = "true";
+    };
+
+    const goToSlide = (index) => {
+      currentIndex = (index + items.length) % items.length; // Handle circular navigation
+      updateCarousel(currentIndex);
+    };
+
+    // Event listeners for previous and next buttons
+    prevButton.addEventListener("click", () => goToSlide(currentIndex - 1));
+    nextButton.addEventListener("click", () => goToSlide(currentIndex + 1));
+
+    // Event listeners for indicators
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => goToSlide(index));
+    });
+
+    // Initialize carousel
+    updateCarousel(currentIndex);
+  });
+</script>
