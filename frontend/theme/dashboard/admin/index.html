@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Bengkel</title>
+  <style>
+    .rounded-circle {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+  </style>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../assets/plugins/fontawesome-free/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a2a6f93390.js" crossorigin="anonymous"></script>
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../assets/css/adminlte.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">...</a></li>
+      </ol>
+    </nav>
+  </nav>
+  <!-- Sidebar -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="#" class="brand-link  bg-secondary">
+      <img src="../assets/img/logo-bengkels.png" class="w-100" alt="">
+    </a>
+    <div class="sidebar">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <img src="../assets/img/nuril.jpg" class="w-25 rounded-circle border border-3">
+          <a href="#" class="d-block">Nuril</a>
+        </div>
+      </div>
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">
+              <i class="nav-icon fa-solid fa-house"></i>
+              <p>Home</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="transaksi-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Transaksi</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="produk-link">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>Produk</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" id="montir-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>Montir/Mekanik</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>Logout</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- Content Wrapper -->
+  <div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 id="section-title">Daftar Pegawai</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div id="transaksi-form" class="card" style="display: none;">
+        <div class="card-header">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Transaksi</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Formulir Transaksi</li>
+            </ol>
+          </nav>
+          <h3 class="card-title">Formulir Transaksi</h3>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label>Nama Pelanggan</label>
+              <input type="text" class="form-control" placeholder="Nama Pelanggan">
+            </div>
+            <div class="form-group">
+              <label>Jenis Layanan</label>
+              <select class="form-control">
+                <option>Servis Motor</option>
+                <option>Ganti Oli</option>
+                <option>Perbaikan Mesin</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tanggal</label>
+              <input type="date" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Keterangan</label>
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="produk-section" class="card" style="display: none;">
+        <div class="card-header">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Produk</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Tabel Produk</li>
+            </ol>
+          </nav>
+          <h3 class="card-title">Tabel Produk</h3>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr style="font-size: 20px; text-align: center;">
+                <th style="width: 10px">No</th>
+                <th>Nama Produk</th>
+                <th>Kategori</th>
+                <th>Harga</th>
+                <th style="width: 150px">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Oli Mesin</td>
+                <td>Pelumas</td>
+                <td>Rp 50,000 - Rp 150,000</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Filter Oli</td>
+                <td>Spare Part</td>
+                <td>Rp 30,000 - Rp 70,000</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Aki (Accu)</td>
+                <td>Komponen Elektrik</td>
+                <td>Rp 500,000 - Rp 1,500,000</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Busi</td>
+                <td>Spare Part</td>
+                <td>Rp 20,000 - Rp 100,000</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Ban Dalam</td>
+                <td>Ban & Velg</td>
+                <td>Rp 50,000 - Rp 100,000</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Ban Luar</td>
+                <td>Ban & Velg</td>
+                <td>Rp 200,000 - Rp 800,000</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>Kampas Rem</td>
+                <td>Spare Part</td>
+                <td>Rp 50,000 - Rp 200,000</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>Lampu</td>
+                <td>Komponen Elektrik</td>
+                <td>Rp 20,000 - Rp 100,000</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Air Radiator</td>
+                <td>Pelumas</td>
+                <td>Rp 25,000 - Rp 50,000</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Sabun Cuci Kendaraan</td>
+                <td>Perawatan Kendaraan</td>
+                <td>Rp 20,000 - Rp 50,000</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="montir-section" class="card">
+        <div class="card-header">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Montir/Mekanik</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Tabel Pegawai</li>
+            </ol>
+          </nav>
+          <h3 class="card-title">Tabel Pegawai</h3>
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr style="font-size: 20px; text-align: center;">
+                <th style="width: 10px">No</th>
+                <th >Nama Mekanik</th>
+                <th>Unit Montir</th>
+                <th>Pengalaman</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td class="w-25" style="text-align: center;">
+                    <img src="../assets/img/nuril.jpg" class="w-100" alt=""><br>
+                    Nuril Anwar</td>
+                <td>Senior Mekanik</td>
+                <td>10 tahun</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td class="w-25" style="text-align: center;">
+                    <img src="../assets/img/rayhan.jpg" class="w-100" alt=""><br>
+                    Rayhan</td>
+                <td>Mekanik</td>
+                <td>7 tahun</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td class="w-25" style="text-align: center;">
+                    <img src="../assets/img/fatih.jpg" class="w-100" alt=""><br>
+                    Fatih</td>
+                <td>Montir</td>
+                <td>7 tahun</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td class="w-25" style="text-align: center;">
+                    <img src="../assets/img/kia.png" class="w-100" alt=""><br>
+                    Azkia Amanda</td>
+                <td>Admin</td>
+                <td>5 tahun</td>
+                <td class="w-25">
+                  <a href="#" class="btn btn-info btn-sm">Detail</a>
+                  <a href="#" class="btn btn-warning btn-sm">Edit</a>
+                  <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-end mt-2">
+            <a href="#" class="nav-link btn bg-secondary btn-sm" id="tambah-link">Tambah Pegawai</a>
+          </div>          
+        </div>
+      </div>
+
+      <div id="tambah-form" class="card" style="display: none;">
+        <div class="card-header">
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Montir/Mekanik</li>
+                  <li class="breadcrumb-item active" aria-current="page">Tambah Pegawai</li>
+                </ol>
+              </nav>
+        </div>
+        <div class="card-body">
+            <div class="container">
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                  <h2>Formulir Penambahan Pegawai</h2>
+                    <div class="mb-3">
+                        <label class="form-label" for="namaPegawai">Nama Pegawai</label>
+                        <input class="form-control" id="namaPegawai" type="text" placeholder="Nama Pegawai" data-sb-validations="required" />
+                        <div class="invalid-feedback" data-sb-feedback="namaPegawai:required">Nama Pegawai is required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="kategori">Kategori</label>
+                        <select class="form-select" id="kategori" aria-label="Kategori">
+                            <option value="Manajer Bengkel">Manajer Bengkel</option>
+                            <option value="Supervisor/Foreman">Supervisor/Foreman</option>
+                            <option value="Teknisi Senior">Teknisi Senior</option>
+                            <option value="Teknisi Spesialis">Teknisi Spesialis</option>
+                            <option value="Mekanik">Mekanik</option>
+                            <option value="Tukang Las">Tukang Las</option>
+                            <option value="Helper/Asisten Mekanik">Helper/Asisten Mekanik</option>
+                            <option value="Petugas Administrasi">Petugas Administrasi</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="deskripsiSkill">Deskripsi skill</label>
+                        <textarea class="form-control" id="deskripsiSkill" type="text" placeholder="Deskripsi skill" style="height: 10rem;" data-sb-validations="required"></textarea>
+                        <div class="invalid-feedback" data-sb-feedback="deskripsiSkill:required">Deskripsi skill is required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label d-block">Kemampuan</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="serviceRingan" type="checkbox" name="kemampuan" data-sb-validations="required" />
+                            <label class="form-check-label" for="serviceRingan">Service Ringan</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="serviceBerat" type="checkbox" name="kemampuan" data-sb-validations="required" />
+                            <label class="form-check-label" for="serviceBerat">Service Berat</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" id="bodyRepair" type="checkbox" name="kemampuan" data-sb-validations="required" />
+                            <label class="form-check-label" for="bodyRepair">Body Repair</label>
+                        </div>
+                        <div class="invalid-feedback" data-sb-feedback="kemampuan:required">One option is required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="tempatTanggalLahir">Tempat Tanggal Lahir</label>
+                        <div class="d-flex gap-2">
+                          <input class="form-control w-50 mr-2" id="tempatTanggalLahir" type="text" placeholder="Tempat Tanggal Lahir" data-sb-validations="required" />
+                        <input class="form-control w-25" id="tempatTanggalLahir" type="date" data-sb-validations="required" />
+                        </div>
+                        <div class="invalid-feedback" data-sb-feedback="tempatTanggalLahir:required">Tempat Tanggal Lahir is required.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="nomorHandphone">Nomor Handphone</label>
+                        <input class="form-control" id="nomorHandphone" type="text" placeholder="Nomor Handphone" data-sb-validations="required" />
+                        <div class="invalid-feedback" data-sb-feedback="nomorHandphone:required">Nomor Handphone is required.</div>
+                    </div>
+                    <!-- Input File -->
+                    <div class="mb-3">
+                      <label class="form-label" for="fileDokumen">Upload Dokumen</label>
+                      <input class="form-control" id="fileDokumen" type="file" />
+                    </div>
+
+                    <!-- Input Foto with Preview -->
+                    <div class="mb-3">
+                        <label class="form-label" for="fotoPegawai">Upload Foto</label>
+                        <input class="form-control" id="fotoPegawai" type="file" accept="image/*" onchange="previewFoto(event)" />
+                        <div class="mt-3">
+                            <img id="fotoPreview" src="#" alt="Pratinjau Foto" style="display: none; max-width: 25%; height: auto;" />
+                        </div>
+                    </div>
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            <p>review results <a href="index.html">here</a></p>
+                        </div>
+                    </div>
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-secondary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+            <script>
+                function previewFoto(event) {
+                    const fotoInput = event.target;
+                    const fotoPreview = document.getElementById('fotoPreview');
+                    if (fotoInput.files && fotoInput.files[0]) {
+                        const reader = new FileReader();
+                        reader.onload = function (e) {
+                            fotoPreview.src = e.target.result;
+                            fotoPreview.style.display = 'block';
+                        };
+                        reader.readAsDataURL(fotoInput.files[0]);
+                    } else {
+                        fotoPreview.src = "#";
+                        fotoPreview.style.display = 'none';
+                    }
+                }
+            </script>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/adminlte.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#transaksi-link").on("click", function(e) {
+      e.preventDefault();
+      $("#produk-section, #montir-section, #tambah-form").hide();
+      $("#transaksi-form").show();
+      $("#section-title").text("Formulir Transaksi");
+    });
+
+    $("#produk-link").on("click", function(e) {
+      e.preventDefault();
+      $("#transaksi-form, #montir-section, #tambah-form").hide();
+      $("#produk-section").show();
+      $("#section-title").text("Tabel Produk");
+    });
+
+    $("#montir-link").on("click", function(e) {
+      e.preventDefault();
+      $("#transaksi-form, #produk-section, #tambah-form").hide();
+      $("#montir-section").show();
+      $("#section-title").text("Daftar Pegawai");
+    });
+
+    $("#tambah-link").on("click", function(e) {
+      e.preventDefault();
+      $("#montir-section, #produk-section, #transaksi-form").hide();
+      $("#tambah-form").show();
+      $("#section-title").text("Tambah Pegawai");
+    });
+  });
+</script>
+</body>
+</html>
