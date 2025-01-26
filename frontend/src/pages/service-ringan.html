@@ -1,0 +1,222 @@
+<!-- floating assets -->
+<img
+  class="floating-bubble-1 absolute right-0 top-0 -z-[1]"
+  src="frontend/src/public/images/floating-bubble-1.svg"
+  alt=""
+/>
+<img
+  class="floating-bubble-2 absolute left-0 top-[387px] -z-[1]"
+  src="frontend/src/public/images/floating-bubble-2.svg"
+  alt=""
+/>
+<img
+  class="floating-bubble-3 absolute right-0 top-[605px] -z-[1]"
+  src="frontend/src/public/images/floating-bubble-3.svg"
+  alt=""
+/>
+<!-- ./end floating assets -->
+
+<section class="section" style="height: 100vh">
+  <div class="container">
+    <ul
+      class="breadcrumb mb-8 inline-flex h-8 items-center justify-center space-x-2 rounded-3xl bg-theme-light px-4 py-2 lg:hidden"
+    >
+      <li class="flex items-center leading-none text-dark">
+        <a class="text-primary" href="index.html">
+          <span class="text-sm leading-none">Home</span>
+        </a>
+      </li>
+      <li class="leading-none text-dark">
+        <a href="product.html" class="text-primary">
+          <span class="text-sm leading-none">/ Produk & Layanan</span>
+        </a>
+      </li>
+      <li class="leading-none text-dark">
+        <span class="text-sm leading-none">/ Service Ringan</span>
+      </li>
+    </ul>
+    <div class="row">
+      <div class="lg:col-6 lg:order-2">
+        <div
+          id="indicators-carousel"
+          class="relative w-full"
+          data-carousel="static"
+        >
+          <!-- Carousel wrapper -->
+          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <!-- Item 1 -->
+            <div
+              class="hidden duration-700 ease-in-out"
+              data-carousel-item="active"
+            >
+              <img
+                src="frontend/src/public/images/img/service-ringan-1.jpg"
+                class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
+                alt="..."
+              />
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="frontend/src/public/images/img/service-ringan-2.jpg"
+                class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
+                alt="..."
+              />
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="frontend/src/public/images/img/service-ringan-3.jpeg"
+                class="absolute left-1/2 top-1/2 block w-full -translate-x-1/2 -translate-y-1/2"
+                alt="..."
+              />
+            </div>
+          </div>
+          <!-- Slider indicators -->
+          <div
+            class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse"
+          >
+            <button
+              type="button"
+              class="h-3 w-3 rounded-full"
+              aria-current="true"
+              aria-label="Slide 1"
+              data-carousel-slide-to="0"
+            ></button>
+            <button
+              type="button"
+              class="h-3 w-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 2"
+              data-carousel-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              class="h-3 w-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 3"
+              data-carousel-slide-to="2"
+            ></button>
+            <button
+              type="button"
+              class="h-3 w-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 4"
+              data-carousel-slide-to="3"
+            ></button>
+            <button
+              type="button"
+              class="h-3 w-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 5"
+              data-carousel-slide-to="4"
+            ></button>
+          </div>
+          <!-- Slider controls -->
+          <button
+            type="button"
+            class="group absolute start-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
+            data-carousel-prev
+          >
+            <span
+              class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary"
+            >
+              <svg
+                class="h-4 w-4 text-white rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 1 1 5l4 4"
+                />
+              </svg>
+              <span class="sr-only">Previous</span>
+            </span>
+          </button>
+          <button
+            type="button"
+            class="group absolute end-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
+            data-carousel-next
+          >
+            <span
+              class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary"
+            >
+              <svg
+                class="h-4 w-4 text-white rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 9 4-4-4-4"
+                />
+              </svg>
+              <span class="sr-only">Next</span>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="mt-10 lg:col-6 lg:order-1 lg:mt-0">
+        <ul
+          class="breadcrumb mb-8 hidden h-8 items-center justify-center space-x-2 rounded-3xl bg-theme-light px-4 py-2 lg:inline-flex"
+        >
+          <li class="flex items-center leading-none text-dark">
+            <a class="text-primary" href="index.html">
+              <span class="text-sm leading-none">Home</span>
+            </a>
+          </li>
+          <li class="leading-none text-dark">
+            <a href="product.html" class="text-primary">
+              <span class="text-sm leading-none">/ Produk & Layanan</span>
+            </a>
+          </li>
+          <li class="leading-none text-dark">
+            <span class="text-sm leading-none">/ Service Ringan</span>
+          </li>
+        </ul>
+        <h1>Service Ringan</h1>
+        <p class="mt-6 text-dark">
+          Kami menyediakan layanan service ringan, adapun layanan service ringan
+          yang kami tawarkan antara lain:
+        </p>
+        <ul class="mt-6 text-dark lg:-ml-4">
+          <li class="mb-2 flex items-center rounded px-4">
+            <img
+              class="mr-3"
+              src="frontend/src/public/images/icons/checkmark-circle.svg"
+              alt=""
+            />
+            Penggantian Oli mesin
+          </li>
+          <li class="mb-2 flex items-center rounded px-4">
+            <img
+              class="mr-3"
+              src="frontend/src/public/images/icons/checkmark-circle.svg"
+              alt=""
+            />
+            Pemeriksaan Ban dan Tekanan Udara
+          </li>
+          <li class="mb-2 flex items-center rounded px-4">
+            <img
+              class="mr-3"
+              src="frontend/src/public/images/icons/checkmark-circle.svg"
+              alt=""
+            />
+            Pelumasan Komponen Penting
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
